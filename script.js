@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bathrooms: 2,
             area: "1,100 sq ft",
             image: "images/property-001.jpg",
-            description: "DEMO PROPERTY — Bright second-floor apartment featuring open-concept living, modern kitchen appliances, in-unit laundry hookups, and a private balcony overlooking the city park.",
+            description: " PROPERTY — Bright second-floor apartment featuring open-concept living, modern kitchen appliances, in-unit laundry hookups, and a private balcony overlooking the city park.",
             features: [
                 " — In-Unit Washer/Dryer",
                 " — Private Balcony",
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: "property-002",
-            title: "DEMO — Spacious Family Suburban House",
+            title: " — Spacious Family Suburban House",
             status: "sale",
             type: "House",
             location: "Oakwood Estates",
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${item.image}" alt="${item.title}" class="property-image" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Havelyne+Homes+Listing';">
                     <div class="property-badges">
                         <span class="badge-tag ${badgeClass}">${badgeLabel}</span>
-                        <span class="badge-tag badge-demo">DEMO</span>
+                        <span class="badge-tag badge-"></span>
                     </div>
                 </div>
                 <div class="property-card-body">
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="modal-header-info">
                 <div class="modal-title-group">
                     <span class="badge-tag ${badgeClass}">${badgeLabel}</span>
-                    <span class="badge-tag badge-demo">DEMO LISTING</span>
+                    <span class="badge-tag badge-"> LISTING</span>
                     <h2 id="modalTitle" class="m-top">${item.title}</h2>
                     <p class="property-location">📍 ${item.location} (${item.type})</p>
                 </div>
