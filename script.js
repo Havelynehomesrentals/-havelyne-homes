@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bedrooms: 4,
             bathrooms: 3,
             area: "2,400 sq ft",
-            image: "images/property-002.jpg",
+            image: "images/property-002.png",
             description: " PROPERTY — Well-maintained suburban single-family home with attached 2-car garage, fenced backyard, updated kitchen, and master suite with walk-in closet.",
             features: [
                 " — Fenced Yard",
