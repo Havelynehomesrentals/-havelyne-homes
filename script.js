@@ -164,15 +164,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function populateLocationFilterOptions() {
-        const locations = [...new Set(propertyData.map(p => p.location))];
-        locations.forEach(loc => {
-            const option = document.createElement('option');
-            option.value = loc;
-            option.textContent = loc;
-            filterLocation.appendChild(option);
-        });
-    }
+  function populateLocationFilterOptions() {
+    const locations = [
+        "Atlanta, GA",
+        "Austin, TX",
+        "Baltimore, MD",
+        "Boston, MA",
+        "Charlotte, NC",
+        "Chicago, IL",
+        "Cleveland, OH",
+        "Columbus, OH",
+        "Dallas, TX",
+        "Denver, CO",
+        "Detroit, MI",
+        "Fort Worth, TX",
+        "Honolulu, HI",
+        "Houston, TX",
+        "Indianapolis, IN",
+        "Jacksonville, FL",
+        "Kansas City, MO",
+        "Las Vegas, NV",
+        "Los Angeles, CA",
+        "Memphis, TN",
+        "Miami, FL",
+        "Milwaukee, WI",
+        "Minneapolis, MN",
+        "Nashville, TN",
+        "New Orleans, LA",
+        "New York, NY",
+        "Oakland, CA",
+        "Oklahoma City, OK",
+        "Omaha, NE",
+        "Orlando, FL",
+        "Philadelphia, PA",
+        "Phoenix, AZ",
+        "Pittsburgh, PA",
+        "Portland, OR",
+        "Raleigh, NC",
+        "Sacramento, CA",
+        "Salt Lake City, UT",
+        "San Antonio, TX",
+        "San Diego, CA",
+        "San Francisco, CA",
+        "San Jose, CA",
+        "Seattle, WA",
+        "St. Louis, MO",
+        "Tampa, FL",
+        "Tucson, AZ",
+        "Tulsa, OK",
+        "Virginia Beach, VA",
+        "Washington, DC",
+        "Wichita, KS"
+    ];
+
+    locations.forEach(location => {
+        const option = document.createElement('option');
+        option.value = location;
+        option.textContent = location;
+        filterLocation.appendChild(option);
+    });
+}
 
     function applyFilters() {
         const statusVal = filterStatus.value;
