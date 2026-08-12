@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Havelyne Homes - Find quality rental properties and homes for sale. Simple, reliable, and straightforward housing.">
+    <title>Havelyne Homes | Find Your Next Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#hero" class="brand-logo">
+                <span class="logo-mark">H</span>
+                <span class="logo-text">Havelyne <strong>Homes</strong></span>
+            </a>
+
+            <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#properties" class="nav-link" id="navRentalsLink">Rentals</a></li>
+                    <li><a href="#properties" class="nav-link" id="navSaleLink">For Sale</a></li>
+                    <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#properties" class="btn btn-primary nav-cta">Find a Home</a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mainNav">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="hero" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge">Welcome to Havelyne Homes</span>
+                    <h1 class="hero-title">Find a Place That Feels Like Home</h1>
+                    <p class="hero-subtitle">
+                        Browse verified rental homes and properties for sale in prime locations. Simple, straightforward, and reliable housing support.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#properties" class="btn btn-primary btn-large">Browse Homes</a>
+                        <a href="#request-housing" class="btn btn-secondary btn-large">Request Housing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="properties" class="section properties-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore Available Homes</h2>
+                    <p>Filter by location, property type, price range, and layout.</p>
+                </div>
+
+                <div class="filter-card">
+                    <form id="filterForm" class="filter-grid" role="search" aria-label="Property Search Filters">
+                        <div class="filter-group">
+                            <label for="filterStatus">Listing Type</label>
+                            <select id="filterStatus" name="status" class="form-control">
+                                <option value="all">All Properties</option>
+                                <option value="rental">For Rent</option>
+                                <option value="sale">For Sale</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filterType">Property Type</label>
+                            <select id="filterType" name="type" class="form-control">
+                                <option value="all">All Types</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="House">House</option>
+                                <option value="Condo">Condo</option>
+                                <option value="Townhouse">Townhouse</option>
+                                <option value="Studio">Studio</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filterLocation">Location</label>
+                            <select id="filterLocation" name="location" class="form-control">
+                                <option value="all">All Locations</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filterMinBudget">Min Price ($)</label>
+                            <input type="number" id="filterMinBudget" name="minBudget" class="form-control" placeholder="e.g. 1000" min="0" step="100">
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filterMaxBudget">Max Price ($)</label>
+                            <input type="number" id="filterMaxBudget" name="maxBudget" class="form-control" placeholder="e.g. 3000" min="0" step="100">
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filterBedrooms">Bedrooms</label>
+                            <select id="filterBedrooms" name="bedrooms" class="form-control">
+                                <option value="all">Any</option>
+                                <option value="1">1+ Bedrooms</option>
+                                <option value="2">2+ Bedrooms</option>
+                                <option value="3">3+ Bedrooms</option>
+                                <option value="4">4+ Bedrooms</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filterBathrooms">Bathrooms</label>
+                            <select id="filterBathrooms" name="bathrooms" class="form-control">
+                                <option value="all">Any</option>
+                                <option value="1">1+ Bathrooms</option>
+                                <option value="2">2+ Bathrooms</option>
+                                <option value="3">3+ Bathrooms</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-actions-group">
+                            <button type="button" id="clearFiltersBtn" class="btn btn-outline w-full">Clear Filters</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="results-header" aria-live="polite">
+                    <p id="propertyCountText" class="property-count">Loading properties...</p>
+                </div>
+
+                <div id="propertyGrid" class="property-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>A simple step-by-step process to finding your ideal property.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Browse Homes</h3>
+                        <p>Explore our current rental and sale listings filtered by your price range and feature criteria.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Choose a Property</h3>
+                        <p>Open property details to review key specs, layout options, features, and full descriptions.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Send an Inquiry</h3>
+                        <p>Click "Ask About This Property" to instantly pre-fill an inquiry form or submit a general housing request.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Get Connected</h3>
+                        <p>Our team at Havelyne Homes will review your request and get back to you using your preferred contact method.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container about-container">
+                <div class="about-content">
+                    <h2>About Havelyne Homes</h2>
+                    <p class="lead-text">
+                        At Havelyne Homes, we are committed to making housing transitions calm, straightforward, and reliable.
+                    </p>
+                    <p>
+                        Whether you are searching for a rental residence or exploring options for purchasing a home, we focus on responsive communication and accurate listing information. Our goal is simple: connect people with high-quality living spaces efficiently and professionally.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <span class="check-icon" aria-hidden="true">✓</span>
+                            <div>
+                                <strong>Clear & Honest Listings</strong>
+                                <p>No hidden terms or deceptive property representations.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature-item">
+                            <span class="check-icon" aria-hidden="true">✓</span>
+                            <div>
+                                <strong>Direct Communication</strong>
+                                <p>Prompt responses to inquiries and housing applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="request-housing" class="section section-alt">
+            <div class="container">
+                <div class="forms-wrapper">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <h2>Housing Request & Inquiries</h2>
+                            <p>Interested in a listing or have specific housing needs? Send us your details below.</p>
+                        </div>
+
+                        <form id="housingRequestForm" action="https://formspree.io/f/YOUR_HOUSING_FORM_ID" method="POST" novalidate>
+                            
+                            <div class="honeypot" aria-hidden="true">
+                                <label for="housing_hp">Leave this field empty</label>
+                                <input type="text" id="housing_hp" name="_gotcha" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div id="selectedPropertyNotice" class="selected-property-notice hidden">
+                                <strong>Property of Interest:</strong>
+                                <span id="selectedPropertyTitle">None</span>
+                                <button type="button" id="clearSelectedPropertyBtn" class="btn-text">Remove Selection</button>
+                            </div>
+                            <input type="hidden" id="interestedPropertyInput" name="interested_property" value="General Inquiry">
+
+                            <div class="form-grid">
+                                <div class="form-group col-span-2">
+                                    <label for="reqFullName">Full Name <span class="required-star">*</span></label>
+                                    <input type="text" id="reqFullName" name="full_name" class="form-control" required aria-required="true">
+                                    <span class="error-message" id="err-reqFullName"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqEmail">Email Address <span class="required-star">*</span></label>
+                                    <input type="email" id="reqEmail" name="email" class="form-control" required aria-required="true">
+                                    <span class="error-message" id="err-reqEmail"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqPhone">Phone Number <span class="required-star">*</span></label>
+                                    <input type="tel" id="reqPhone" name="phone" class="form-control" required aria-required="true">
+                                    <span class="error-message" id="err-reqPhone"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqLocation">Preferred Location</label>
+                                    <input type="text" id="reqLocation" name="preferred_location" class="form-control" placeholder="e.g. Downtown, Westside">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqStatus">Rental or Sale?</label>
+                                    <select id="reqStatus" name="housing_intent" class="form-control">
+                                        <option value="Rental">Rental</option>
+                                        <option value="Sale">Sale / Purchase</option>
+                                        <option value="Undecided">Undecided / Flexible</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqType">Preferred Property Type</label>
+                                    <select id="reqType" name="property_type" class="form-control">
+                                        <option value="Any">Any Type</option>
+                                        <option value="Apartment">Apartment</option>
+                                        <option value="House">House</option>
+                                        <option value="Condo">Condo</option>
+                                        <option value="Townhouse">Townhouse</option>
+                                        <option value="Studio">Studio</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqBudget">Max Monthly Budget / Price</label>
+                                    <input type="text" id="reqBudget" name="budget" class="form-control" placeholder="e.g. $2,000/mo or $350,000">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqBedrooms">Bedrooms Needed</label>
+                                    <select id="reqBedrooms" name="bedrooms" class="form-control">
+                                        <option value="Any">Flexible</option>
+                                        <option value="Studio">Studio</option>
+                                        <option value="1">1 Bedroom</option>
+                                        <option value="2">2 Bedrooms</option>
+                                        <option value="3">3 Bedrooms</option>
+                                        <option value="4+">4+ Bedrooms</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqMoveDate">Desired Move-in Date</label>
+                                    <input type="date" id="reqMoveDate" name="target_move_date" class="form-control">
+                                </div>
+
+                                <div class="form-group col-span-2">
+                                    <label for="reqMessage">Additional Information or Questions</label>
+                                    <textarea id="reqMessage" name="message" rows="4" class="form-control" placeholder="Tell us about pets, parking needs, lease duration, or specific questions..."></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large w-full m-top">Submit Housing Request</button>
+                            
+                            <div id="housingFormFeedback" class="form-feedback" aria-live="polite"></div>
+                        </form>
+                    </div>
+
+                    <div id="submit-property" class="form-card">
+                        <div class="form-header">
+                            <h2>Submit Your Property</h2>
+                            <p>Have a home or apartment you want listed or managed? Submit details below for evaluation.</p>
+                        </div>
+
+                        <p class="form-disclaimer">
+                            <strong>Note:</strong> Submitting your property details allows our team to review your listing proposal. Submission does not automatically guarantee a public listing on this site.
+                        </p>
+
+                        <form id="propertySubmissionForm" action="https://formspree.io/f/YOUR_PROPERTY_FORM_ID" method="POST" novalidate>
+                            
+                            <div class="honeypot" aria-hidden="true">
+                                <label for="property_hp">Leave this field empty</label>
+                                <input type="text" id="property_hp" name="_gotcha" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group col-span-2">
+                                    <label for="subOwnerName">Owner / Contact Name <span class="required-star">*</span></label>
+                                    <input type="text" id="subOwnerName" name="owner_name" class="form-control" required aria-required="true">
+                                    <span class="error-message" id="err-subOwnerName"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subEmail">Email Address <span class="required-star">*</span></label>
+                                    <input type="email" id="subEmail" name="email" class="form-control" required aria-required="true">
+                                    <span class="error-message" id="err-subEmail"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subPhone">Phone Number <span class="required-star">*</span></label>
+                                    <input type="tel" id="subPhone" name="phone" class="form-control" required aria-required="true">
+                                    <span class="error-message" id="err-subPhone"></span>
+                                </div>
+
+                                <div class="form-group col-span-2">
+                                    <label for="subAddress">Property Address or General Location <span class="required-star">*</span></label>
+                                    <input type="text" id="subAddress" name="property_address" class="form-control" required aria-required="true" placeholder="Street address, neighborhood, or city">
+                                    <span class="error-message" id="err-subAddress"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subType">Property Type</label>
+                                    <select id="subType" name="property_type" class="form-control">
+                                        <option value="Apartment">Apartment</option>
+                                        <option value="House">House</option>
+                                        <option value="Condo">Condo</option>
+                                        <option value="Townhouse">Townhouse</option>
+                                        <option value="Studio">Studio</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subStatus">Listing Intent</label>
+                                    <select id="subStatus" name="listing_type" class="form-control">
+                                        <option value="Rental">For Rent</option>
+                                        <option value="Sale">For Sale</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subPrice">Asking Price / Rent ($) <span class="required-star">*</span></label>
+                                    <input type="text" id="subPrice" name="asking_price" class="form-control" placeholder="e.g. 1800/mo or 250000" required aria-required="true">
+                                    <span class="error-message" id="err-subPrice"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subBedrooms">Bedrooms</label>
+                                    <input type="number" id="subBedrooms" name="bedrooms" class="form-control" min="0" value="1">
+                                </div>
+
+                                <div class="form-group col-span-2">
+                                    <label for="subDescription">Property Overview & Features</label>
+                                    <textarea id="subDescription" name="description" rows="4" class="form-control" placeholder="Describe layout, condition, amenities, square footage, availability date..."></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-secondary btn-large w-full m-top">Submit Property for Evaluation</button>
+                            
+                            <div id="propertyFormFeedback" class="form-feedback" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container text-center">
+                <div class="section-header">
+                    <h2>Get in Touch Directly</h2>
+                    <p>Have quick questions? Reach out directly via email or telephone.</p>
+                </div>
+
+                <div class="contact-actions-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon" aria-hidden="true">✉</div>
+                        <h3>Email Us</h3>
+                        <p>Inquire about listings, submit paperwork, or general info.</p>
+                        <a href="mailto:havelynehomes.rentals@outlook.com" class="btn btn-outline">
+                            Email Havelyne Homes
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon" aria-hidden="true">📞</div>
+                        <h3>Call Us</h3>
+                        <p>Speak with our customer support team directly.</p>
+                        <a href="tel:+18005550199" class="btn btn-outline">
+                            Call Havelyne Homes
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="brand-logo logo-light">
+                    <span class="logo-mark">H</span>
+                    <span class="logo-text">Havelyne <strong>Homes</strong></span>
+                </a>
+                <p>Simple, modern, and trustworthy housing solutions.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#properties">Rentals & Sales</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#request-housing">Housing Request</a></li>
+                    <li><a href="#submit-property">Submit Property</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p>Email: <a href="mailto:havelynehomes.rentals@outlook.com">havelynehomes.rentals@outlook.com</a></p>
+                <p>Phone: <a href="tel:+18005550199">+1 (800) 555-0199</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear"></span> Havelyne Homes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="propertyModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button type="button" id="modalCloseBtn" class="modal-close" aria-label="Close details modal">&times;</button>
+            <div id="modalBody" class="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
