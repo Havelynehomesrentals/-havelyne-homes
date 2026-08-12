@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(formElement);
         const actionUrl = formElement.getAttribute('action');
 
-        if (actionUrl.includes('YOUR_HOUSING_FORM_ID') || actionUrl.includes('YOUR_PROPERTY_FORM_ID')) {
+        if (!actionUrl || !actionUrl.startsWith('https://formspree.io/f/')) {
             feedbackEl.classList.add('error');
             feedbackEl.textContent = 'Form configuration incomplete: Please set your real Formspree endpoint in index.html.';
             return;
