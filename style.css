@@ -1,3 +1,4 @@
+```css
 :root {
     --primary-color: #1e3a8a;
     --primary-hover: #1e40af;
@@ -12,20 +13,27 @@
     --error-bg: #fef2f2;
     --success-color: #16a34a;
     --success-bg: #f0fdf4;
-    
+
     --max-width: 1200px;
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 16px;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-    --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
-    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --transition: all 0.25s ease;
 }
 
-*, *::before, *::after {
+
+/* =========================================
+   RESET
+========================================= */
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -69,6 +77,11 @@ ul {
     outline-offset: 2px;
 }
 
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
 .skip-link {
     position: absolute;
     top: -40px;
@@ -85,6 +98,11 @@ ul {
     top: 10px;
 }
 
+
+/* =========================================
+   GENERAL
+========================================= */
+
 .container {
     width: 100%;
     max-width: var(--max-width);
@@ -100,16 +118,40 @@ ul {
     background-color: var(--light-bg);
 }
 
-.text-center { text-align: center; }
-.w-full { width: 100%; }
-.m-top { margin-top: 20px; }
-.hidden { display: none !important; }
-.col-span-2 { grid-column: span 1; }
+.text-center {
+    text-align: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.m-top {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.col-span-2 {
+    grid-column: span 1;
+}
 
 @media (min-width: 768px) {
-    .col-span-2 { grid-column: span 2; }
-    .section { padding: 80px 0; }
+    .col-span-2 {
+        grid-column: span 2;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
 }
+
+
+/* =========================================
+   SECTION HEADERS
+========================================= */
 
 .section-header {
     text-align: center;
@@ -127,6 +169,11 @@ ul {
     color: var(--muted-text);
     font-size: 1.1rem;
 }
+
+
+/* =========================================
+   BADGES
+========================================= */
 
 .badge {
     display: inline-block;
@@ -150,9 +197,26 @@ ul {
     letter-spacing: 0.5px;
 }
 
-.badge-rental { background-color: #e0f2fe; color: #0369a1; }
-.badge-sale { background-color: #fef3c7; color: #b45309; }
-.badge-demo { background-color: #fee2e2; color: #991b1b; margin-left: 6px; }
+.badge-rental {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.badge-sale {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.badge-demo {
+    background-color: #fee2e2;
+    color: #991b1b;
+    margin-left: 6px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
 
 .btn {
     display: inline-flex;
@@ -219,6 +283,11 @@ ul {
     font-size: 0.875rem;
     margin-left: 10px;
 }
+
+
+/* =========================================
+   HEADER
+========================================= */
 
 .site-header {
     position: sticky;
@@ -301,8 +370,13 @@ ul {
 }
 
 @media (max-width: 900px) {
-    .hamburger { display: flex; }
-    .nav-cta { display: none; }
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-cta {
+        display: none;
+    }
 
     .main-nav {
         position: absolute;
@@ -334,9 +408,14 @@ ul {
     }
 }
 
+
+/* =========================================
+   HERO
+========================================= */
+
 .hero-section {
     position: relative;
-    background-image: url('images/hero.jpg');
+    background-image: url("images/hero.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -353,7 +432,11 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.85), rgba(15, 118, 110, 0.75));
+    background: linear-gradient(
+        135deg,
+        rgba(30, 58, 138, 0.85),
+        rgba(15, 118, 110, 0.75)
+    );
     z-index: 1;
 }
 
@@ -387,8 +470,15 @@ ul {
 }
 
 @media (min-width: 768px) {
-    .hero-title { font-size: 3.25rem; }
+    .hero-title {
+        font-size: 3.25rem;
+    }
 }
+
+
+/* =========================================
+   PROPERTY FILTER
+========================================= */
 
 .filter-card {
     background: var(--card-bg);
@@ -406,11 +496,15 @@ ul {
 }
 
 @media (min-width: 600px) {
-    .filter-grid { grid-template-columns: repeat(2, 1fr); }
+    .filter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 992px) {
-    .filter-grid { grid-template-columns: repeat(4, 1fr); }
+    .filter-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .filter-group {
@@ -457,6 +551,11 @@ ul {
     color: var(--muted-text);
 }
 
+
+/* =========================================
+   PROPERTY GRID
+========================================= */
+
 .property-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -464,12 +563,21 @@ ul {
 }
 
 @media (min-width: 768px) {
-    .property-grid { grid-template-columns: repeat(2, 1fr); }
+    .property-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1024px) {
-    .property-grid { grid-template-columns: repeat(3, 1fr); }
+    .property-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
+
+
+/* =========================================
+   PROPERTY CARDS
+========================================= */
 
 .property-card {
     background: var(--card-bg);
@@ -585,6 +693,11 @@ ul {
     margin-bottom: 8px;
 }
 
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
 .steps-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -592,11 +705,15 @@ ul {
 }
 
 @media (min-width: 600px) {
-    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1024px) {
-    .steps-grid { grid-template-columns: repeat(4, 1fr); }
+    .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .step-card {
@@ -632,6 +749,11 @@ ul {
     color: var(--muted-text);
 }
 
+
+/* =========================================
+   ABOUT
+========================================= */
+
 .about-container {
     max-width: 800px;
 }
@@ -656,7 +778,9 @@ ul {
 }
 
 @media (min-width: 600px) {
-    .about-features { grid-template-columns: repeat(2, 1fr); }
+    .about-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .about-feature-item {
@@ -674,6 +798,11 @@ ul {
     font-size: 1.2rem;
 }
 
+
+/* =========================================
+   FORMS
+========================================= */
+
 .forms-wrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -681,7 +810,9 @@ ul {
 }
 
 @media (min-width: 900px) {
-    .forms-wrapper { grid-template-columns: 1fr 1fr; }
+    .forms-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .form-card {
@@ -723,7 +854,9 @@ ul {
 }
 
 @media (min-width: 600px) {
-    .form-card .form-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-card .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .required-star {
@@ -784,6 +917,11 @@ ul {
     border: 1px solid #fecaca;
 }
 
+
+/* =========================================
+   CONTACT
+========================================= */
+
 .contact-actions-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -793,7 +931,9 @@ ul {
 }
 
 @media (min-width: 600px) {
-    .contact-actions-grid { grid-template-columns: 1fr 1fr; }
+    .contact-actions-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .contact-card {
@@ -819,6 +959,11 @@ ul {
     margin-bottom: 20px;
 }
 
+
+/* =========================================
+   FOOTER
+========================================= */
+
 .site-footer {
     background-color: #0f172a;
     color: #94a3b8;
@@ -834,7 +979,9 @@ ul {
 }
 
 @media (min-width: 768px) {
-    .footer-container { grid-template-columns: 2fr 1fr 1fr; }
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
 }
 
 .logo-light {
@@ -858,11 +1005,13 @@ ul {
     gap: 10px;
 }
 
-.footer-links a, .footer-contact a {
+.footer-links a,
+.footer-contact a {
     color: #94a3b8;
 }
 
-.footer-links a:hover, .footer-contact a:hover {
+.footer-links a:hover,
+.footer-contact a:hover {
     color: #ffffff;
 }
 
@@ -872,6 +1021,11 @@ ul {
     text-align: center;
     font-size: 0.85rem;
 }
+
+
+/* =========================================
+   PROPERTY DETAILS MODAL
+========================================= */
 
 .modal-backdrop {
     position: fixed;
@@ -892,7 +1046,7 @@ ul {
     background: #ffffff;
     border-radius: var(--radius-lg);
     width: 100%;
-    max-width: 750px;
+    max-width: 850px;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
@@ -901,8 +1055,15 @@ ul {
 }
 
 @keyframes modalFadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .modal-close {
@@ -934,6 +1095,45 @@ ul {
     padding: 25px;
 }
 
+
+/* =========================================
+   MODAL PROPERTY IMAGE GALLERY
+========================================= */
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-md);
+    background-color: #e2e8f0;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.modal-gallery img:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+.modal-gallery .gallery-main {
+    grid-column: span 2;
+    height: 360px;
+}
+
+
+/* =========================================
+   OLD SINGLE MODAL IMAGE
+   KEPT FOR COMPATIBILITY
+========================================= */
+
 .modal-image-wrapper {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -948,6 +1148,11 @@ ul {
     height: 100%;
     object-fit: cover;
 }
+
+
+/* =========================================
+   MODAL PROPERTY INFORMATION
+========================================= */
 
 .modal-header-info {
     display: flex;
@@ -985,10 +1190,72 @@ ul {
     color: var(--dark-text);
 }
 
+
+/* =========================================
+   MOBILE MODAL GALLERY
+========================================= */
+
+@media (max-width: 600px) {
+    .modal-backdrop {
+        padding: 10px;
+    }
+
+    .modal-content {
+        max-height: 94vh;
+        border-radius: 12px;
+    }
+
+    .modal-body {
+        padding: 18px;
+    }
+
+    .modal-gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .modal-gallery img,
+    .modal-gallery .gallery-main {
+        grid-column: span 1;
+        height: 220px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+        font-size: 1.8rem;
+    }
+
+    .modal-header-info {
+        flex-direction: column;
+    }
+
+    .modal-title-group h2 {
+        font-size: 1.3rem;
+    }
+
+    .modal-price-tag {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
     }
 }
+```
