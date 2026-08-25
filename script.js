@@ -69,23 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
     bathrooms: 2,
     area: "50 × 100 ft lot",
 
-    image: "images/property 004/nj new home 1.webp",
+  image: "images/property-004/nj new home 1.webp",
 
-    images: [
-        "images/property 004/nj new home 1.webp",
-        "images/property 004/nj new home 2.webp",
-        "images/property 004/nj new home 3.webp",
-        "images/property 004/nj new home 4.webp",
-        "images/property 004/nj new home 5.webp",
-        "images/property 004/nj new home 6.webp",
-        "images/property 004/nj new home 7.webp",
-        "images/property 004/nj new home 8.webp",
-        "images/property 004/nj new home 9.webp",
-        "images/property 004/nj new home 10.webp",
-        "images/property 004/nj new home 11.webp",
-        "images/property 004/nj new home 12.webp",
-        "images/property 004/nj new home 13.webp"
-    ],
+images: [
+    "images/property-004/nj new home 1.webp",
+    "images/property-004/nj new home 2.webp",
+    "images/property-004/nj new home 3.webp",
+    "images/property-004/nj new home 4.webp",
+    "images/property-004/nj new home 5.webp",
+    "images/property-004/nj new home 6.webp",
+    "images/property-004/nj new home 7.webp",
+    "images/property-004/nj new home 8.webp",
+    "images/property-004/nj new home 9.webp",
+    "images/property-004/nj new home 10.webp",
+    "images/property-004/nj new home 11.webp",
+    "images/property-004/nj new home 12.webp",
+    "images/property-004/nj new home 13.webp"
+],
 
     description: "🏡 Newly renovated 3-bedroom, 2-full-bath Colonial located in the heart of Secaucus. Features include a bright living room, formal dining area, family room with a wood-burning fireplace, updated kitchen, finished basement with a second full bathroom and laundry area, private backyard, attached garage, and oversized driveway.",
 
