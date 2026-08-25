@@ -371,60 +371,82 @@ images: [
     }
 
     function openModal(propertyId) {
-        const item = propertyData.find(p => p.id === propertyId);
-        if (!item) return;
+    const item = propertyData.find(p => p.id === propertyId);
+    if (!item) return;
 
-        const formattedPrice = item.status === 'rental' 
-            ? `$${item.price.toLocaleString()}/mo` 
-            : `$${item.price.toLocaleString()}`;
+    const formattedPrice = item.status === 'rental'
+        ? `$${item.price.toLocaleString()}/mo`
+        : `$${item.price.toLocaleString()}`;
 
-        const badgeClass = item.status === 'rental' ? 'badge-rental' : 'badge-sale';
-        const badgeLabel = item.status === 'rental' ? 'For Rent' : 'For Sale';
+    const badgeClass = item.status === 'rental' ? 'badge-rental' : 'badge-sale';
+    const badgeLabel = item.status === 'rental' ? 'For Rent' : 'For Sale';
 
-        const featuresHTML = item.features.map(f => `<span class="modal-feature-tag">✓ ${f}</span>`).join('');
+    const featuresHTML = item.features
+        .map(f => `<span class="modal-feature-tag">✓ ${f}</span>`)
+        .join('');
 
-        modalBody.innerHTML = `
-            <div class="modal-image-wrapper">
-                <img src="${item.image}" alt="${item.title}" class="modal-image" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500?text=Havelyne+Homes+Listing';">
+    const propertyImages = item.images && item.images.length
+        ? item.images
+        : [item.image];
+
+    const galleryHTML = propertyImages.map((image, index) => `
+        <img
+            src="${image}"
+            alt="${item.title} - Photo ${index + 1}"
+            class="modal-gallery-image"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500?text=Havelyne+Homes+Listing';"
+        >
+    `).join('');
+
+    modalBody.innerHTML = `
+        <div class="modal-gallery">
+            ${galleryHTML}
+        </div>
+
+        <div class="modal-header-info">
+            <div class="modal-title-group">
+                <span class="badge-tag ${badgeClass}">${badgeLabel}</span>
+                <span class="badge-tag badge-">LISTING</span>
+                <h2 id="modalTitle" class="m-top">${item.title}</h2>
+                <p class="property-location">📍 ${item.location} (${item.type})</p>
             </div>
-            <div class="modal-header-info">
-                <div class="modal-title-group">
-                    <span class="badge-tag ${badgeClass}">${badgeLabel}</span>
-                    <span class="badge-tag badge-"> LISTING</span>
-                    <h2 id="modalTitle" class="m-top">${item.title}</h2>
-                    <p class="property-location">📍 ${item.location} (${item.type})</p>
-                </div>
-                <div class="modal-price-tag">${formattedPrice}</div>
-            </div>
 
-            <div class="property-specs">
-                <span class="spec-item">Bedrooms: ${item.bedrooms}</span>
-                <span class="spec-item">Bathrooms: ${item.bathrooms}</span>
-                <span class="spec-item">Total Area: ${item.area}</span>
-            </div>
+            <div class="modal-price-tag">${formattedPrice}</div>
+        </div>
 
-            <h4>Property Overview</h4>
-            <p class="m-top" style="color: var(--muted-text); line-height: 1.6;">${item.description}</p>
+        <div class="property-specs">
+            <span class="spec-item">Bedrooms: ${item.bedrooms}</span>
+            <span class="spec-item">Bathrooms: ${item.bathrooms}</span>
+            <span class="spec-item">Total Area: ${item.area}</span>
+        </div>
 
-            <h4 class="m-top">Features & Amenities</h4>
-            <div class="modal-features-list">
-                ${featuresHTML}
-            </div>
+        <h4>Property Overview</h4>
+        <p class="m-top" style="color: var(--muted-text); line-height: 1.6;">
+            ${item.description}
+        </p>
 
-            <div class="m-top">
-                <button type="button" class="btn btn-primary w-full" id="modalInquireBtn">Ask About This Property</button>
-            </div>
-        `;
+        <h4 class="m-top">Features & Amenities</h4>
 
-        propertyModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        <div class="modal-features-list">
+            ${featuresHTML}
+        </div>
 
-        document.getElementById('modalInquireBtn').addEventListener('click', () => {
-            closeModal();
-            selectPropertyForInquiry(item.id);
-        });
-    }
+        <div class="m-top">
+            <button type="button" class="btn btn-primary w-full" id="modalInquireBtn">
+                Ask About This Property
+            </button>
+        </div>
+    `;
 
+    propertyModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    document.getElementById('modalInquireBtn').addEventListener('click', () => {
+        closeModal();
+        selectPropertyForInquiry(item.id);
+    });
+}
     function closeModal() {
         propertyModal.classList.add('hidden');
         document.body.style.overflow = '';
