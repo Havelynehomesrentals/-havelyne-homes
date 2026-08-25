@@ -57,9 +57,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 " — Elevator Access",
                 " — Secure Keycard Entry"
             ]
+        },
+        {
+            id: "property-004",
+            title: "🏡 Newly Renovated 3-Bedroom Colonial",
+            status: "rental",
+            type: "House",
+            location: "Secaucus, NJ",
+            price: 4000,
+            bedrooms: 3,
+            bathrooms: 2,
+            area: "50 × 100 ft lot",
+            image: "images/property-004.png",
+            description: "🏡 Newly renovated 3-bedroom, 2-full-bath Colonial located in the heart of Secaucus. Features include a bright living room, formal dining area, family room with a wood-burning fireplace, updated kitchen, finished basement with a second full bathroom and laundry area, private backyard, attached garage, and oversized driveway.",
+            features: [
+                "🚗 Attached Garage",
+                "🌳 Private Backyard",
+                "🔥 Wood-Burning Fireplace",
+                "🧺 Washer & Dryer",
+                "🍽️ Dishwasher & Refrigerator",
+                "❄️ Air Conditioning",
+                "🔥 Natural Gas & Oil Heating",
+                "🏡 Finished Basement",
+                "🚘 Oversized Driveway",
+                "✨ Newly Renovated"
+            ]
         }
     ];
-
     let activeProperties = [...propertyData];
     let selectedPropertyForInquiry = null;
 
