@@ -68,7 +68,20 @@ document.addEventListener('DOMContentLoaded', () => {
             bedrooms: 3,
             bathrooms: 2,
             area: "50 × 100 ft lot",
-            image: "images/property-004.webp",
+            images:  [
+    "images/property 004/nj new home1.webp",
+    "images/property 004/nj new home2.webp",
+    "images/property 004/nj new home3.webp",
+    "images/property 004/nj new home4.webp",
+    "images/property 004/nj new home5.webp",
+    "images/property 004/nj new home6.webp",
+    "images/property 004/nj new home7.webp",
+    "images/property 004/nj new home8.webp",
+    "images/property 004/nj new home9.webp",
+    "images/property 004/nj new home10.webp",
+    "images/property 004/nj new home11.webp",
+    "images/property 004/nj new home12.webp"
+],
             description: "🏡 Newly renovated 3-bedroom, 2-full-bath Colonial located in the heart of Secaucus. Features include a bright living room, formal dining area, family room with a wood-burning fireplace, updated kitchen, finished basement with a second full bathroom and laundry area, private backyard, attached garage, and oversized driveway.",
             features: [
                 "🚗 Attached Garage",
