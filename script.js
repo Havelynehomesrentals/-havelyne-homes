@@ -173,9 +173,8 @@ images: [
         "images/property-005/tx new home 16.webp",
         "images/property-005/tx new home 17.webp",
         "images/property-005/tx new home 18.webp",
-        "images/property-005/tx new home 19.webp",
-        "images/property-005/tx new home 20.webp"
-        ]
+        "images/property-005/tx new home 19.webp"
+       ]
     }
 ];                                           
     let activeProperties = [...propertyData];
