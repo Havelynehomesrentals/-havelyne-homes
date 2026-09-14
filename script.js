@@ -154,6 +154,8 @@ images: [
         "🐶 Small Dogs Allowed"
     ],
 
+   image: "images/property-005/tx new home 1.webp",
+        
     images: [
         "images/property-005/tx new home 1.webp",
         "images/property-005/tx new home 2.webp",
