@@ -101,8 +101,83 @@ images: [
                 "🚘 Oversized Driveway",
                 "✨ Newly Renovated"
             ]
-        }
-    ];
+        },
+    {
+    id: "property-005",
+    title: "🏡 Completely Renovated 3-Bedroom Home",
+    status: "rental",
+    type: "Single-Family Home",
+    location: "Hurst, TX",
+    price: 2100,
+    bedrooms: 3,
+    bathrooms: 1,
+    area: "1,012 sqft",
+    deposit: 2100,
+    available: "Available Now",
+
+    description:
+        "✨ Completely renovated from top to bottom, this beautiful Hurst rental home offers modern comfort, energy efficiency, and stylish finishes throughout. Featuring 3 bedrooms, 1 full bathroom, and a spacious backyard with two storage buildings, this home provides plenty of space and flexibility for comfortable living. Located in a quiet, established neighborhood, it offers a functional layout with room to make it your own. 🏡",
+
+    features: [
+        "✨ Completely Renovated",
+        "🛏️ 3 Bedrooms",
+        "🛁 1 Full Bathroom",
+        "📐 1,012 sqft",
+        "🌳 Spacious Backyard",
+        "🏚️ Two Storage Buildings",
+        "🍽️ Brand-New Kitchen",
+        "🚪 Soft-Close Kitchen Cabinets",
+        "🔌 All-New Appliances",
+        "🧱 New Insulation in Attic & Floors",
+        "❄️ New A/C Ductwork",
+        "🌡️ WiFi-Enabled Smart Thermostat",
+        "🪟 Energy-Efficient New Windows",
+        "💡 New Lighting Fixtures",
+        "🌀 Ceiling Fans Throughout",
+        "🔋 Convenient USB Electrical Outlets",
+        "🐶 Dogs Allowed",
+        "🐱 Cats Allowed",
+        "🚗 Off-Street Parking",
+        "🚘 On-Site Parking",
+        "🌬️ Central Air",
+        "🔥 Forced Air Heating",
+        "🧺 Laundry",
+        "🏠 Carpet & Tile Flooring"
+    ],
+
+    rentalTerms: [
+        "📅 Lease Term: 1 Year",
+        "💰 Monthly Rent: $2,100",
+        "💵 Security Deposit: $2,100",
+        "📆 Available: Now",
+        "🐱 Cats Allowed",
+        "🐶 Small Dogs Allowed"
+    ],
+
+    images: [
+        "images/property-005/tx new home 1.webp",
+        "images/property-005/tx new home 2.webp",
+        "images/property-005/tx new home 3.webp",
+        "images/property-005/tx new home 4.webp",
+        "images/property-005/tx new home 5.webp",
+        "images/property-005/tx new home 6.webp",
+        "images/property-005/tx new home 7.webp",
+        "images/property-005/tx new home 8.webp",
+        "images/property-005/tx new home 9.webp",
+        "images/property-005/tx new home 10.webp",
+        "images/property-005/tx new home 11.webp",
+        "images/property-005/tx new home 12.webp",
+        "images/property-005/tx new home 13.webp",
+        "images/property-005/tx new home 14.webp",
+        "images/property-005/tx new home 15.webp",
+        "images/property-005/tx new home 16.webp",
+        "images/property-005/tx new home 17.webp",
+        "images/property-005/tx new home 18.webp",
+        "images/property-005/tx new home 19.webp",
+        "images/property-005/tx new home 20.webp"
+        ]
+    }
+];                                           
     let activeProperties = [...propertyData];
     let selectedPropertyForInquiry = null;
 
