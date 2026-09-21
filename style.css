@@ -334,7 +334,7 @@ ul {
 
 .hero-section {
     position: relative;
-    background-image: url('images/havelyne-hero-home.png');
+    background-image: url("/-havelyne-homes/images/havelyne-hero-home.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
